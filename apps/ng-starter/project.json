@@ -20,7 +20,10 @@
           "apps/ng-starter/src/favicon.ico",
           "apps/ng-starter/src/assets"
         ],
-        "styles": ["apps/ng-starter/src/styles.scss"],
+        "styles": [
+          "apps/ng-starter/src/styles.scss",
+          "node_modules/bootstrap/dist/css/bootstrap.min.css"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -57,7 +60,10 @@
           "buildTarget": "ng-starter:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/ng-starter/proxy.conf.json"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
