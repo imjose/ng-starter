@@ -1,4 +1,4 @@
-// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
@@ -8,11 +8,11 @@ export const environment = {
   production: false,
 };
 
-// export const extModules = [
-//   StoreDevtoolsModule.instrument({
-//     maxAge: 25,
-//   }),
-// ];
+export const extModules = [
+  StoreDevtoolsModule.instrument({
+    maxAge: 25,
+  }),
+];
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
