@@ -1,0 +1,53 @@
+{
+  "name": "ng-starter-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/ng-starter-server/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/ng-starter-server",
+        "main": "apps/ng-starter-server/src/main.ts",
+        "tsConfig": "apps/ng-starter-server/tsconfig.app.json",
+        "assets": ["apps/ng-starter-server/src/assets"],
+        "webpackConfig": "apps/ng-starter-server/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "ng-starter-server:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ng-starter-server:build:development"
+        },
+        "production": {
+          "buildTarget": "ng-starter-server:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/ng-starter-server/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
