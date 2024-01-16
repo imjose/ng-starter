@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
 
 @Component({
-  standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
   selector: 'ng-starter-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  template: `
+    <ng-starter-nx-welcome></ng-starter-nx-welcome> <router-outlet></router-outlet>
+  `,
 })
 export class AppComponent {
   title = 'ng-starter';
