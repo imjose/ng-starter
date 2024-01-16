@@ -20,7 +20,10 @@
           "apps/ng-starter/src/favicon.ico",
           "apps/ng-starter/src/assets"
         ],
-        "styles": ["apps/ng-starter/src/styles.scss"],
+        "styles": [
+          "apps/ng-starter/src/styles.scss",
+          "node_modules/bootstrap/dist/css/bootstrap.min.css"
+        ],
         "scripts": []
       },
       "configurations": {
